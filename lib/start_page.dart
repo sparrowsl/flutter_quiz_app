@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class StartPage extends StatelessWidget {
-  const StartPage({super.key});
+  const StartPage({super.key, required this.callback});
+  final void Function() callback;
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +14,7 @@ class StartPage extends StatelessWidget {
           Image.asset("assets/images/quiz.png", color: Colors.blueAccent),
           const SizedBox(height: 10),
           const Text(
-            "Learn Flutter the cool way!!",
+            "Learn Flutter the only way!!",
             style: TextStyle(
               fontSize: 18,
               color: Colors.blueAccent,
@@ -22,7 +23,7 @@ class StartPage extends StatelessWidget {
           ),
           const SizedBox(height: 50),
           ElevatedButton.icon(
-            onPressed: () {},
+            onPressed: () => callback(),
             label: const Text("Start Quiz",
                 style: TextStyle(fontSize: 16, color: Colors.blueAccent)),
             icon: const Icon(Icons.arrow_right_alt),
